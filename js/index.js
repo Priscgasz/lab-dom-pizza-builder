@@ -40,30 +40,56 @@ function renderPepperoni() {
       onePep.style.visibility = 'hidden';
     }
   });
+  console.log(renderPepperoni(pep))
 }
 
+// Iteration 1: set the visibility of `<section class="mushroom">`
 function renderMushrooms() {
-  // Iteration 1: set the visibility of `<section class="mushroom">`
+  document.querySelectorAll('.mushroom').forEach((oneMushroom) =>{
+    if (state.mushroom) {
+      oneMushroom.style.visibility = 'visible';  
+  } else {
+    oneMushroom.style.visibility = 'hidden';
+  }
+});
+console.log(renderMushroom(mushroom))
 }
 
+ // Iteration 1: set the visibility of `<section class="green-pepper">`
 function renderGreenPeppers() {
-  // Iteration 1: set the visibility of `<section class="green-pepper">`
+  document.querySelectorAll('.greenPeppers').forEach((oneGreenPepper) =>{
+    if (state.greenPeppers) {
+      oneGreenPepper.style.visibility = 'visible';  
+  } else {
+    oneGreenPepper.style.visibility = 'hidden';
+  }
+});
+console.log(renderGreenPeppers)
 }
 
-function renderWhiteSauce() {
   // Iteration 2: add/remove the class "sauce-white" of `<section class="sauce">`
-}
+const element1 = document.getElementsByClassName(.sauce)
+function renderWhiteSauce() {
+  element1.classList.toggle("white-sauce")
+}                                                                                                      
 
-function renderGlutenFreeCrust() {
   // Iteration 2: add/remove the class "crust-gluten-free" of `<section class="crust">`
+
+  const element2 = document.getElementsByClassName(.crust)
+  function renderGlutenFreeCrust() {
+  element2.classList.toggle("crust-gluten-free")
 }
 
 function renderButtons() {
   // Iteration 3: add/remove the class "active" of each `<button class="btn">`
+  const element3 = document.getElementsByClassName(.crust)
+  function renderGlutenFreeCrust() {
+  element3.classList.toggle("crust-gluten-free")
 }
 
 function renderPrice() {
   // Iteration 4: change the HTML of `<aside class="panel price">`
+
 }
 
 renderEverything();
@@ -71,13 +97,24 @@ renderEverything();
 // Iteration 1: Example of a click event listener on `<button class="btn btn-pepperoni">`
 document.querySelector('.btn.btn-pepperoni').addEventListener('click', function () {
   state.pepperoni = !state.pepperoni;
-  renderEverything();
 });
 
 // Iteration 1: Add click event listener on `<button class="btn btn-mushrooms">`
+document.querySelector(`.btn.btn-mushrooms`).addEventListener('click', function() {
+  state.mushroom = !state.mushroom; 
+} )
 
 // Iteration 1: Add click event listener on `<button class="btn btn-green-peppers">`
-
+document.querySelector(`.btn.btn-greenPeppers`).addEventListener('click', function() {
+  state.greenPeppers = !state.greenPeppers; 
+} )
 // Iteration 2: Add click event listener on `<button class="btn btn-sauce">`
-
+document.querySelector(`.btn.btn-sauce`).addEventListener('click', function(){
+  state.sauce = !state.sauce;
+} )
 // Iteration 2: Add click event listener on `<button class="btn btn-crust">`
+document.querySelector(`.btn.btn-crust`).addEventListener(`Click`, function(){
+  state.crust = !=state.crust;
+} )
+
+renderEverything();
